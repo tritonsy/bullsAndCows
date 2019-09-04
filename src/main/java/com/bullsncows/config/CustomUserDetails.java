@@ -24,7 +24,7 @@ public class CustomUserDetails implements UserDetailsService {
     @Override
     public UserDetails loadUserByUsername(String login) throws UsernameNotFoundException {
         final Optional<Player> byLogin = repository.getByLogin(login);
-        Player player = byLogin.orElseThrow(() -> new UsernameNotFoundException("Username not found"));
+        final Player player = byLogin.orElseThrow(() -> new UsernameNotFoundException("Username not found"));
         return new User(player.getLogin(),
                 player.getPass(),
                 true,

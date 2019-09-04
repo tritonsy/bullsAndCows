@@ -25,6 +25,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.io.IOException;
 import java.nio.charset.Charset;
+import java.nio.charset.StandardCharsets;
 import java.time.format.DateTimeFormatter;
 import java.util.*;
 
@@ -60,7 +61,7 @@ public class WebController {
                 if (errors.hasErrors()) return;
 
                 final RegistrationForm form = (RegistrationForm) o;
-                if (!Charset.forName("US-ASCII").newEncoder().canEncode(form.getLogin()))
+                if (!StandardCharsets.US_ASCII.newEncoder().canEncode(form.getLogin()))
                     errors.rejectValue("login", "", "Can't read not ascii symbols.");
 
                 if (errors.hasErrors()) return;
@@ -93,7 +94,7 @@ public class WebController {
                     RegistrationForm form, BindingResult bindingResult, Model model) {
         getRegistrationValidator().validate(form, bindingResult);
         if (bindingResult.hasErrors()) {
-//            To show registration window
+            //To show registration window
             model.addAttribute("regError", true);
             return "login";
         }
@@ -110,7 +111,7 @@ public class WebController {
         model.addAttribute("user",
                 service.loadPlayer(login, true)
                         .orElseThrow(() -> new IllegalArgumentException("This player doesn't exists")));
-//        For dates formatting in jsp
+        //For dates formatting in jsp
         model.addAttribute("formatter", DateTimeFormatter.ofPattern("dd.MM.yyyy HH:mm"));
         return "playerPage";
     }

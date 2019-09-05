@@ -22,6 +22,9 @@
 - [x] Компьютер ведет рейтинг пользователей (показатель -- среднее число попыток до угадывания числа).
 - [x] Пользователь может выбирать число визуально, с помощью мыши.
 # Технические требования и использование технологий:
-- [x] [Spring MVC](https://habr.com/ru/post/336816/), [Spring Data](https://habr.com/ru/post/435114/), [Spring Security](https://habr.com/ru/post/203318/), [Hibernate ORM](https://habr.com/ru/post/29694/). Для работы с базой использован JPA. 
+- [x] [Spring MVC](https://habr.com/ru/post/336816/), [Spring Data](https://habr.com/ru/post/435114/), [Spring Security](https://habr.com/ru/post/203318/), [Hibernate ORM](https://habr.com/ru/post/29694/). Для работы с базой использован [JPA](https://javarush.ru/groups/posts/2259-jpa--znakomstvo-s-tekhnologiey). 
 - [x] СУБД PostgreSQL. 
 - [x] Обмен между фронтом и бэком ведётся через JSON формат.
+
+# База данных.
+![Webp net-resizeimage](https://user-images.githubusercontent.com/16539012/64354328-4b20b680-d010-11e9-9359-6eadf9c4f099.png)

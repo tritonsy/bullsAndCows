@@ -11,7 +11,7 @@
 <c:choose>
     <c:when test="${error == null}">
         <p><b>Type</b> Status Report</p>
-        <p><b>Description</b>Something went wrong.</p>
+        <p><b>Description</b> Something went wrong.</p>
     </c:when>
     <c:otherwise>
         <p><b>Type</b> Illegal player's nickname</p>

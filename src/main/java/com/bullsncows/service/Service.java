@@ -53,7 +53,7 @@ public class Service {
      * @throws IllegalArgumentException if nickname doesn't exists in db
      */
     public Game newGame(String player) throws IllegalArgumentException {
-        Game game = new Game();
+        final Game game = new Game();
         game.setPlayer(playersRepository.getByLogin(player)
                 .orElseThrow(() -> new IllegalArgumentException("This player doesn't exists")));
         game.setGuessedNumber(new Random(System.currentTimeMillis()).ints(0, 9)
@@ -92,14 +92,14 @@ public class Service {
     }
 
     private RatingItem castRating(Object[] rating) {
-        RatingItem ratingItem = new RatingItem();
+        final RatingItem ratingItem = new RatingItem();
         ratingItem.setLogin((String) rating[0]);
         ratingItem.setAverage(String.format("%.2f", ((BigDecimal) rating[1]).doubleValue()));
         return ratingItem;
     }
 
     private RatingItem loginToItem(String login) {
-        RatingItem ratingItem = new RatingItem();
+        final RatingItem ratingItem = new RatingItem();
         ratingItem.setLogin(login);
         ratingItem.setAverage("0.0");
         return ratingItem;

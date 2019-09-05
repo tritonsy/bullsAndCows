@@ -1,13 +1,13 @@
 package com.bullsncows.controller;
 
-import com.fasterxml.jackson.core.type.TypeReference;
-import com.fasterxml.jackson.databind.ObjectMapper;
 import com.bullsncows.entity.Attempt;
 import com.bullsncows.entity.Game;
 import com.bullsncows.repository.AttemptsRepository;
 import com.bullsncows.repository.GamesRepository;
 import com.bullsncows.repository.PlayersRepository;
 import com.bullsncows.service.Service;
+import com.fasterxml.jackson.core.type.TypeReference;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.http.HttpHeaders;
@@ -24,7 +24,6 @@ import org.springframework.validation.Validator;
 import org.springframework.web.bind.annotation.*;
 
 import java.io.IOException;
-import java.nio.charset.Charset;
 import java.nio.charset.StandardCharsets;
 import java.time.format.DateTimeFormatter;
 import java.util.*;
@@ -182,7 +181,7 @@ public class WebController {
      * Responses on ajax request to add new attempt in game. Checks constraints on correct attempted number, correct
      * game and player.
      *
-         * @return response string on not completed attempt, string 'Victory!' on game over or error text on any error
+     * @return response string on not completed attempt, string 'Victory!' on game over or error text on any error
      */
     @PostMapping(value = "/newAttempt", consumes = "text/plain")
     @ResponseBody

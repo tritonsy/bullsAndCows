@@ -11,7 +11,7 @@
         <encoding>UTF-8</encoding>
         <java.version>1.8</java.version>
         <spring.version>5.0.4.RELEASE</spring.version>
-        <spring.securiry>5.1.6.RELEASE</spring.securiry>
+        <spring.securiry>5.3.3.RELEASE</spring.securiry>
         <hibernate.version>5.3.6.Final</hibernate.version>
         <postgresql.version>9.4.1212.jre7</postgresql.version>
         <spring-data.version>2.1.10.RELEASE</spring-data.version>
